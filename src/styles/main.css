@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light;
+  font-family: "DM Sans", "Noto Sans TC", sans-serif;
+  color: #132a43;
+  background: #eef2f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 25%, rgba(255,255,255,.98) 0%, rgba(246,248,251,.9) 38%, rgba(237,242,248,.95) 100%);
+}
+
+.page-shell {
+  width: min(1560px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px 34px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-header, .site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+}
+
+.site-header { min-height: 38px; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #17334f;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: #fff;
+  background: #18a99e;
+  font-size: 17px;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(24,169,158,.2);
+}
+
+.brand-name { font-size: 13px; font-weight: 600; letter-spacing: .14em; }
+.brand-name b { color: #18a99e; font-weight: 800; }
+
+.header-meta, .footer-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7b8ca0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: #24baa4; box-shadow: 0 0 0 3px rgba(36,186,164,.12); }
+.meta-divider { color: #c0cad4; }
+
+.game-wrap {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+
+#game {
+  width: min(100%, calc((100vh - 126px) * 1.6));
+  aspect-ratio: 8 / 5;
+  overflow: hidden;
+  touch-action: none;
+  border: 1px solid rgba(195,207,220,.8);
+  border-radius: 18px;
+  background: #f5f8fb;
+  box-shadow: 0 22px 70px rgba(35,58,85,.13), 0 4px 14px rgba(35,58,85,.06);
+}
+
+#game canvas { display: block; width: 100% !important; height: 100% !important; }
+
+.site-footer {
+  min-height: 24px;
+  color: #8998a9;
+  font-size: 11px;
+  letter-spacing: .02em;
+}
+
+.footer-tag { color: #9aa8b6; font-size: 9px; }
+.footer-tag span { color: #f0a348; font-size: 13px; }
+
+@media (max-width: 720px) {
+  .page-shell { padding: 12px 10px 10px; gap: 8px; }
+  .site-header { min-height: 30px; }
+  .brand-mark { width: 26px; height: 26px; border-radius: 8px; font-size: 15px; }
+  .brand-name { font-size: 11px; }
+  .header-meta { font-size: 8px; gap: 6px; letter-spacing: .09em; }
+  #game { width: 100%; border-radius: 12px; }
+  .site-footer { font-size: 9px; }
+  .footer-tag { font-size: 8px; }
+}
